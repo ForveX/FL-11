@@ -1,0 +1,172 @@
+h2 {
+    text-align: center;
+    color: lightskyblue;
+}
+
+.tm-section-description {
+    text-align: center;
+}
+
+.tm-team-description-container {
+    display: inline-block;
+    height: 100%;
+    max-width: 355px;   
+    vertical-align: middle;
+}
+
+.box>h2:hover {
+ background-color: lightskyblue;
+ color: white;
+}
+
+.tm-team-img {
+    display: inline-block;
+}
+
+.tm-banner {
+    background-color: #76cdd7;
+}
+
+.tm-banner-inner {
+    background-color: #fff;
+    text-shadow: 2px 2px  #76cdd7;
+}
+
+section, .tm-sidebar, .tm-content-header {
+    box-shadow: 0 4px 8px 0 rgba(61, 55, 61, 0.7), 0 6px 20px 0 rgba(61, 55, 61, 0.7);
+}
+
+section::before {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-color: #76cdd7 transparent transparent transparent;
+  border-width: 20px 20px 0 0; 
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.padding-medium ol {
+    list-style: lower-roman;
+}
+
+.padding-medium a:visited {
+    color: #ffb347;
+}
+
+.padding-medium a:hover {
+    color: #ffb347;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.padding-medium a:hover::before{
+    content: '|';
+    color: #ffb347;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.text::after{
+    content: ' New';
+    vertical-align: super;
+    color: red;
+    font-size: 12px; 
+    font-weight: 600;
+}
+
+.box-work {
+    font-style: italic;
+    padding: 7px;
+}
+
+.box-work h2 {
+    text-align: left;
+    color: #000;
+    font-style: normal;
+}
+
+.box-work p::first-letter {
+    font-weight: 400;
+}
+
+.box-work:nth-child(2n+2) {
+    background-color: #f5f5f5;
+}
+
+.form-control {
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: #76cdd7;
+}
+
+.form-control:active,  .form-control:focus {
+    background-color: #76cdd7;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.form-control:active::placeholder,  .form-control:focus::placeholder {
+    color: #fff;
+}
+
+textarea {
+    border-width: 2px 2px 2px 2px !important;
+    resize: none;
+    border-radius: 4px !important;
+}
+
+.mandatory-field {
+    position: relative;
+}
+
+.mandatory-field::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-image: url('../img/email-icon.png');
+    background-size: cover;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+    display: inline-block;
+}
+
+button {
+    position: relative;
+    left: 940px;
+    background-color: transparent !important;
+    border-width: 2px 2px 2px 2px !important;
+    resize: none;
+    border-radius: 4px !important;
+    border-color: #76cdd7 !important;
+    color: #76cdd7 !important;
+}
+
+button:hover {
+    background-color: #76cdd7 !important;
+    color: #fff !important;
+}
+
+.tm-nav-item-link:hover {
+    background-color: #f5f5f5;
+}
+
+h2 + p {
+    font-style: italic;
+}
+
+.tm-banner-text {
+            animation: flip-vertical-left 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite forwards;
+}
+
+@keyframes flip-vertical-left {
+0% {
+          transform: rotateY(0);
+}
+100% {
+          transform: rotateY(-359deg);
+}
+}
