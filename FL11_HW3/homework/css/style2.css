@@ -6,7 +6,7 @@ body {
   background-color: #1b1e2a;
   z-index: -100; }
 
-header {
+.header, .header-wrap {
   z-index: -50;
   background-image: url(../img/m-h-night.jpg);
   background-size: cover;
@@ -14,9 +14,8 @@ header {
   width: 100%;
   color: #fff;
   border-bottom-right-radius: 36em 17em; }
-
-.header-wrap {
-  padding-left: 140px; }
+  .header-wrap {
+    padding-left: 140px; }
 
 .landing-logo {
   display: inline-block;
