@@ -1,0 +1,18 @@
+$bg-color: #1b1e2a;
+$header-bg-url: url(../img/m-h-night.jpg);
+$fakeul-color:#ff4d2f;
+$header-text-color: #fff;
+$section-card-bg: #383d4f;
+$button-bg: #e4ad00;
+$footer-bg-color: #383d4f;
+
+@mixin gradient{
+    background: rgba(227,170,0,1);
+    background: -moz-linear-gradient(45deg, rgba(227,170,0,1) 0%, rgba(188,106,40,1) 49%, rgba(147,39,82,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(227,170,0,1)), color-stop(49%, rgba(188,106,40,1)), color-stop(100%, rgba(147,39,82,1)));
+    background: -webkit-linear-gradient(45deg, rgba(227,170,0,1) 0%, rgba(188,106,40,1) 49%, rgba(147,39,82,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(227,170,0,1) 0%, rgba(188,106,40,1) 49%, rgba(147,39,82,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(227,170,0,1) 0%, rgba(188,106,40,1) 49%, rgba(147,39,82,1) 100%);
+    background: linear-gradient(45deg, rgba(227,170,0,1) 0%, rgba(188,106,40,1) 49%, rgba(147,39,82,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3aa00', endColorstr='#932752', GradientType=1 );
+}

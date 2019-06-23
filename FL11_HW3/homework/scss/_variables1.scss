@@ -1,0 +1,19 @@
+$bg-color: #fff;
+$header-bg-url: url(../img/m-h-day.jpg);
+$fakeul-color: #0ca1c8;
+$header-text-color:#000;
+$section-card-bg:  #1b1e2a;
+$button-bg: #699a00;
+$footer-bg-color: #1b1e2a;
+
+@mixin gradient {
+    background: #689900;
+    background: -moz-linear-gradient(45deg, #689900 0%, #285adc 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, #689900), color-stop(100%, #285adc));
+    background: -webkit-linear-gradient(45deg, #689900 0%, #285adc 100%);
+    background: -o-linear-gradient(45deg, #689900 0%, #285adc 100%);
+    background: -ms-linear-gradient(45deg, #689900 0%, #285adc 100%);
+    background: linear-gradient(45deg, #689900 0%, #285adc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#689900', endColorstr='#285adc', GradientType=1 );
+    
+}
