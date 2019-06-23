@@ -6,6 +6,7 @@ $font-weights: ("regular": 400, "medium": 600, "bold": 700);
 }
 
 body {
+    max-width: 1380px;
     background-color: $bg-color;
     z-index: -100;
 }
@@ -14,8 +15,9 @@ body {
     z-index: -50;
     background-image: $header-bg-url;
     background-size: cover;
+    background-position: center;
     height: 656px;
-    width: 100%;
+    width: 1380px;
     color: $header-text-color;
     border-bottom-right-radius: 36em 17em;
 
@@ -23,6 +25,7 @@ body {
     &-wrap {
         @extend .header;
         padding-left: 140px;
+        width: 1225px;
     }
 }
 
@@ -160,12 +163,12 @@ body {
     z-index: 30;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
-    font-weight: map-get($font-weights , medium);
+    font-weight: 600;
     padding-top: 20px;
-    width: 100%;
+    padding-left: 91px;
+    width: 206px;
     text-align: center;
     position: relative;
-    left: 100px;
 }
 
 .section_card_underline {
@@ -175,22 +178,18 @@ body {
     height: 19px;
     background-color: $fakeul-color;
     background-size: cover;
-    top: 5px;
-    right: 128px;
+    top: -28px;
+    right: 0;
     position: relative;
     display: inline-block;
 }
 
 .section_card:first-child .section_card_underline {
     width: 190px;
-    top: 5px;
-    right: 195px;
 }
 
 .section_card:nth-child(2) .section_card_underline {
     width: 162px;
-    top: 5px;
-    right: 167px;
 }
 
 .section_card_text {

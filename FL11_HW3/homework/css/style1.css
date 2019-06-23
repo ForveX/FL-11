@@ -3,6 +3,7 @@
   padding: 0; }
 
 body {
+  max-width: 1380px;
   background-color: #fff;
   z-index: -100; }
 
@@ -10,12 +11,14 @@ body {
   z-index: -50;
   background-image: url(../img/m-h-day.jpg);
   background-size: cover;
+  background-position: center;
   height: 656px;
-  width: 100%;
+  width: 1380px;
   color: #000;
   border-bottom-right-radius: 36em 17em; }
   .header-wrap {
-    padding-left: 140px; }
+    padding-left: 140px;
+    width: 1225px; }
 
 .landing-logo {
   display: inline-block;
@@ -137,10 +140,10 @@ body {
   font-size: 25px;
   font-weight: 600;
   padding-top: 20px;
-  width: 100%;
+  padding-left: 91px;
+  width: 206px;
   text-align: center;
-  position: relative;
-  left: 100px; }
+  position: relative; }
 
 .section_card_underline {
   z-index: -1;
@@ -149,20 +152,16 @@ body {
   height: 19px;
   background-color: #0ca1c8;
   background-size: cover;
-  top: 5px;
-  right: 128px;
+  top: -28px;
+  right: 0;
   position: relative;
   display: inline-block; }
 
 .section_card:first-child .section_card_underline {
-  width: 190px;
-  top: 5px;
-  right: 195px; }
+  width: 190px; }
 
 .section_card:nth-child(2) .section_card_underline {
-  width: 162px;
-  top: 5px;
-  right: 167px; }
+  width: 162px; }
 
 .section_card_text {
   font-family: 'Hind', sans-serif;
