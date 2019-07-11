@@ -5,7 +5,8 @@ function formatTime(minutes) {
 
     days = Math.floor(minutes / 1440);
     hours = Math.floor((minutes / 60) % 24);
-    min = Math.floor(minutes % 60);
-    
+    min = Math.floor(minutes % 60);    
     return days + ' day(s) ' + hours + ' hour(s) ' + min + ' minute(s)'
 }
+
+formatTime(2500);

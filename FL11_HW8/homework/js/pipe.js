@@ -3,8 +3,8 @@ function addOne(x) {
 }
 
 function pipe(x) {
-    for (let i=1; i<arguments.length; i++) {
-        if ( arguments[i]!= addOne) {
+    for (let i = 1; i < arguments.length; i++) {
+        if ( arguments[i] !== addOne) {
             continue;
         } else {
             x = addOne(x);
@@ -12,3 +12,5 @@ function pipe(x) {
     }
     return x;
 }
+
+pipe(2, addOne, addOne, addOne);

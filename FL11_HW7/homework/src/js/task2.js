@@ -18,7 +18,7 @@ if (!do_you_want_play) {
             user_number = prompt('Choose a roulete pocket number from 0 to ' + 
             max_attempt_value + '\nAttempts left: ' + i + '\nTotal prize: ' + prize + 
             '$ \nPossible prize on current attempt: '+ award + '$');
-            if (user_number == system_number) {
+            if (Number(user_number) === system_number) {
                 alert('Thank you for your participation. Your prize is: '+ award+ '$');
                 prize = prize + award;
                 continue_play = confirm('Do you want play again?');
