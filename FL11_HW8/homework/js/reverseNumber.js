@@ -1,20 +1,24 @@
-function reverseNumber (n) {
-    n=n + '';
-    let nReversed = '';
-    console.log(n);
+function reverseNumber(n) {
+    let res;
 
-    if (n[0] === '-') {
-        nReversed = '-';
-        for (var i = n.length - 1; i > 0; i--) { 
-            nReversed += n[i];
-        }
-        return nReversed;
+    if (n > 0) {
+        res = '';
+    } else if (n < 0) {
+        res = '-';
     } else {
-        for (var j = n.length - 1; j >= 0; j--) { 
-            nReversed += n[j];
-        }
-        return nReversed;
-    }
+ return; 
 }
 
-reverseNumber(-34567);
+    n = Math.abs(n);
+
+    void function _(n) {
+        if (n < 1) {
+ return; 
+}
+        res += ~~(n % 10);
+        _(n/10);
+      }(n);
+      return +res
+}
+
+reverseNumber(34567);
