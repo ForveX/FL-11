@@ -15,7 +15,7 @@ function reverseNumber(n) {
         if (n < 1) {
  return; 
 }
-        res += ~~(n % 10);
+        res += Math.floor (n % 10);
         _(n/10);
       }(n);
       return +res
