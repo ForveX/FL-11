@@ -1,12 +1,19 @@
 function reverseNumber (n) {
-	n = n + '';
-    let nToArray = n.split('');
+    n=n + '';
+    let nReversed = '';
+    console.log(n);
 
-    if (nToArray[0] === '-') {
-        nToArray.splice(0, 1);
-       return Number('-' + nToArray.reverse().join(''));
+    if (n[0] === '-') {
+        nReversed = '-';
+        for (var i = n.length - 1; i > 0; i--) { 
+            nReversed += n[i];
+        }
+        return nReversed;
     } else {
-        return Number(nToArray.reverse().join(''));
+        for (var j = n.length - 1; j >= 0; j--) { 
+            nReversed += n[j];
+        }
+        return nReversed;
     }
 }
 
