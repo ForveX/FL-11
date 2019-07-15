@@ -1,3 +1,7 @@
+let msInDays = 1000 * 60 * 60 * 24;
+let adultAge = 18;
+const daysInYear = 365;
+
 function getNumbers(string) {
     let resArr = [];
 
@@ -38,7 +42,7 @@ function executeforEach(arr, fn) {
 }
 
 function mapArray(arr, fn){
-    let mappedArray = [];        
+    let mappedArray = []; 
     mappedArray = executeforEach(arr, fn);        
     return mappedArray;   
 }
@@ -63,7 +67,7 @@ function showFormattedDate(date){
 }
 
 function daysBetween(startday, endday) {    
-    return Math.round(Math.abs(endday.getTime()-startday.getTime())/(1000 * 60 * 60 * 24));
+    return Math.round(Math.abs(endday.getTime()-startday.getTime())/msInDays);
 }
 
 let dataArray = [
@@ -108,17 +112,17 @@ function getAmountOfAdultPeople (data) {
 
     for (let i=0; i < data.length; i++) {
         let birthday = new Date(data[i][' birthday ']);
-        ageArr.push(daysBetween(birthday, date)/365);
+        ageArr.push(daysBetween(birthday, date)/daysInYear);
     }    
     let adultArr = filterArray(ageArr, function(el) {
- return el > 18 
+ return el > adultAge 
 });
    return adultArr.length;
 
 }
 
 function keys(obj) {
-    let KeyArray = []
+    let KeyArray = [];
     for (let propName in obj) {
         KeyArray.push(propName);
     }
