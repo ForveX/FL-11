@@ -1,4 +1,4 @@
-let rootNode = document.getElementById("root");
+let rootNode = document.getElementById('root');
 
 const todoList = {
     todos: [],
@@ -55,18 +55,18 @@ const handlers = {
         todoList.toggleAll();
     },
 
-    activateAddButton: function (e) {
+    activateAddButton: function () {
         let addButton = document.getElementById('add');
         let todoTextInput = document.getElementById('todoTextInput');
 
         if (todoTextInput.value.length < 1) {
-            addButton.classList.remove("add-btn--active");
+            addButton.classList.remove('add-btn--active');
         } else {
-            addButton.classList.add("add-btn--active");
+            addButton.classList.add('add-btn--active');
         }
     },
 
-    addTodo: function (e) {
+    addTodo: function () {
         let todoTextInput = document.getElementById('todoTextInput');
 
         if (todoTextInput.value.length > 1) {
@@ -77,7 +77,7 @@ const handlers = {
 
     deleteTodo: function (position) {
         todoList.deleteTodo(position);
-    },
+    }
 };
 
 const view = {
@@ -89,15 +89,15 @@ const view = {
         for (let i = 0; i < todoList.todos.length; i++) {
             let todoLi = document.createElement('li');
             let todoLiText = document.createElement('input');
-            todoLiText.type = "text";
+            todoLiText.type = 'text';
             todoLiText.disabled = true;
             todoLiText.id = 'textInput';
-            todoLi.classList.add("col-12")
-            let todoTextWithCompletion = todoList.todos[i].todoText;;
+            todoLi.classList.add('col-12')
+            let todoTextWithCompletion = todoList.todos[i].todoText;
             let check = document.createElement('input');
-            check.type = "checkbox";
-            check.id = "checkbox";
-            check.className = "checkbox";
+            check.type = 'checkbox';
+            check.id = 'checkbox';
+            check.className = 'checkbox';
             check.checked = '';
 
             todoLi.id = i;
@@ -110,26 +110,26 @@ const view = {
 
             if (document.getElementById('checkbox').checked === true) {
                 todoList.toggleCompleted(i);
-            };
+            }
             if (todoList.todos[i].completed === true) {
-                todoLiText.style.textDecoration = "line-through";
-            };
+                todoLiText.style.textDecoration = 'line-through';
+            }
 
         }
     },
 
     createDeleteButton: function () {
         let deleteButton = document.createElement('i');
-        deleteButton.href = "#";
-        deleteButton.textContent = "delete";
+        deleteButton.href = '#';
+        deleteButton.textContent = 'delete';
         deleteButton.className = 'material-icons delete';
         return deleteButton;
     },
 
     createEditButton: function () {
         let editButton = document.createElement('i');
-        editButton.href = "#";
-        editButton.textContent = "edit";
+        editButton.href = '#';
+        editButton.textContent = 'edit';
         editButton.className = 'material-icons edit';
         return editButton;
     },
@@ -142,7 +142,7 @@ const view = {
 
             if (elementClicked.className === 'material-icons delete') {
                 handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
-            };
+            }
         });
 
         // Edit List Item
@@ -152,17 +152,17 @@ const view = {
             let position = elementClicked.parentNode.id;
             
             if (elementClicked.className === 'material-icons edit') {
+                let check = parentElement.children[0];
+
                 if (elementClicked.innerHTML === 'edit') {
                     let input = parentElement.children[1];
-                    let check = parentElement.children[0];
                     let editbtn = elementClicked; 
-                    console.log(parentElement.children[0])
-
+                    
                     input.disabled = false;
-                    input.className += " activeTextInput ";
+                    input.className += ' activeTextInput';
 
                     editbtn.innerHTML = 'save';
-                    check.classList.add("hiden");
+                    check.classList.add('hiden');
 
                     input.focus();
                     input.select();
@@ -173,11 +173,11 @@ const view = {
                     editbtn.innerHTML = 'edit';
 
                     input.disabled = true;
-                    input.classList.remove("activeTextInput");
-                    check.classList.remove("hiden");
+                    input.classList.remove('activeTextInput');
+                    check.classList.remove('hiden');
                     todoList.changeTodo(position, textInput);                   
-                };
-            };
+                }
+            }
         });
 
         // Line through on check
@@ -189,7 +189,7 @@ const view = {
             if (elementClicked.className === 'checkbox') {
                 todoList.toggleCompleted(position);
                 check.checked = true;
-            };
+            }
         });
     }
 };
