@@ -15,6 +15,7 @@ p {
 
 i {
     color: #5FB3E7;
+    vertical-align: middle;
 }
 
 
@@ -70,13 +71,6 @@ i {
   font-style: italic;
 }
 
-/* ul {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-} */
-
 li {
   list-style-type: none !important;
   border-bottom: 1px solid rgba(5, 5, 5, 0.1);
@@ -99,12 +93,12 @@ li a:hover {
 
 input {
   border: none;
-  border-bottom: 1px solid rgba(5, 5, 5, 0..01);
+  border-bottom: 1px solid rgba(5, 5, 5, 0.01);
   background-color: inherit;
 }
 
 li input[type="text"] {
-  padding: none;
+  padding: 0;
   border: none;
   margin-left: 10px;
   transition: .5s;
@@ -112,7 +106,11 @@ li input[type="text"] {
 
 .activeTextInput {
   box-shadow: 1px 1px 10px rgba(5, 5, 5, 0.1);
-  padding: 10px !important;
+  height: 25px;
+}
+
+hr {
+  color: #E8F2FB;
 }
 
 input[type="text"] {

@@ -162,7 +162,7 @@ const view = {
                     input.className += ' activeTextInput';
 
                     editbtn.innerHTML = 'save';
-                    check.classList.add('hiden');
+                    check.classList.add('hidden');
 
                     input.focus();
                     input.select();
@@ -174,7 +174,7 @@ const view = {
 
                     input.disabled = true;
                     input.classList.remove('activeTextInput');
-                    check.classList.remove('hiden');
+                    check.classList.remove('hidden');
                     todoList.changeTodo(position, textInput);                   
                 }
             }
