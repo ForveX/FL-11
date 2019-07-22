@@ -3,19 +3,19 @@ let Fighter = (function () {
     function Fighter(obj) {
         const maxHp = obj.hp; //fixation start hp level
         //battle log object
-        let logging = { 
+        let logging = {
             name: obj.name,
             Wins: 0,
             Losses: 0
         };
-        // get properties in anonymous functions 
+        // get properties in anonymous functions
         this.getName = function () {
             return obj.name;
         };
         this.setHealth = function (s) {
             obj.hp = s;
             return obj.hp;
-        }
+        };
         this.getDamage = function () {
             return obj.damage;
         };
@@ -45,21 +45,22 @@ let Fighter = (function () {
                 this.setHealth(0);
             }
             return this.getHealth()
-        }
-        //combat history logs 
+        };
+        
+        //combat history logs
         this.addWin = function () {
             logging.Wins++;
             return logging.Wins;
-        }
+        };
 
         this.addLoss = function () {
             logging.Losses++;
             return logging.Losses
-        }
+        };
 
         this.logCombatHistory = function () {
             console.log(logging);
-        }
+        };
         //non batle heal fighter method
         this.heal = function (amount) {
             if (this.getHealth() + amount >= maxHp) {
@@ -68,7 +69,7 @@ let Fighter = (function () {
                 this.setHealth(this.getHealth() + amount);
             }
             return this.getHealth();
-        }
+        };
 
     }
     return Fighter;
@@ -76,7 +77,7 @@ let Fighter = (function () {
 
 function battle(fighter1, fighter2) {
     //check is some fighter dead
-    if (fighter1.getHealth() === 0 || fighter2.getHealth() === 0) { 
+    if (fighter1.getHealth() === 0 || fighter2.getHealth() === 0) {
         if (fighter1.getHealth() === 0) {
             console.log(fighter1.getName() + " is dead and can't fight");
         }

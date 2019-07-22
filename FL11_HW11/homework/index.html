@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 11 - TODO Cat List</title>
+  <link rel="stylesheet" href="./assets/material-icons/material-icons.css">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div id="root">
+    <div class="container">
+      <h1 class="text-center">TODO Cat List</h1>
+  
+      <div class="addingContainer">
+        <div class="inputEl col-10">
+          <input type="text" placeholder="Enter a List Item" id="todoTextInput" oninput="handlers.activateAddButton(event)">
+        </div>
+        <div class="add-btn--container col-1">
+          <i class="material-icons add-btn" id = "add" onclick="handlers.addTodo(event)">add</i>
+        </div>
+      </div>
+
+      <hr style="size: 4px; color: #E8F2FB;">
+      <div class="row list-container">
+        
+          <ul id="todoList" class="col-12">
+  
+          </ul>
+        
+  
+      </div>     
+    </div>
+  </div>
+
+  <script src="./src/app.js"></script>
+</body>
+</html>
