@@ -194,7 +194,7 @@ const view = {
                 check.checked = true;
             }
         });
-
+        //Drag&Drop section
         todosUl.addEventListener('dragover', (event) => {
             let elementClicked = event.target;
 
@@ -220,8 +220,6 @@ const view = {
 
         todosUl.addEventListener('dragstart', (event) => {
             let elementClicked = event.target;
-            console.log(_el);
-            console.log(elementClicked)
 
                 event.dataTransfer.effectAllowed = 'move';
                 event.dataTransfer.setData('text/plain', null);
