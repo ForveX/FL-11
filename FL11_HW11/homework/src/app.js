@@ -1,4 +1,5 @@
 let rootNode = document.getElementById('root');
+let _el;
 
 const todoList = {
     todos: [],
@@ -92,7 +93,9 @@ const view = {
             todoLiText.type = 'text';
             todoLiText.disabled = true;
             todoLiText.id = 'textInput';
-            todoLi.classList.add('col-12')
+            todoLi.classList.add('col-12');
+            todoLi.draggable = 'true';
+
             let todoTextWithCompletion = todoList.todos[i].todoText;
             let check = document.createElement('input');
             check.type = 'checkbox';
@@ -150,14 +153,14 @@ const view = {
             let elementClicked = event.target;
             let parentElement = elementClicked.parentNode;
             let position = elementClicked.parentNode.id;
-            
+
             if (elementClicked.className === 'material-icons edit') {
                 let check = parentElement.children[0];
 
                 if (elementClicked.innerHTML === 'edit') {
                     let input = parentElement.children[1];
-                    let editbtn = elementClicked; 
-                    
+                    let editbtn = elementClicked;
+
                     input.disabled = false;
                     input.className += ' activeTextInput';
 
@@ -175,7 +178,7 @@ const view = {
                     input.disabled = true;
                     input.classList.remove('activeTextInput');
                     check.classList.remove('hidden');
-                    todoList.changeTodo(position, textInput);                   
+                    todoList.changeTodo(position, textInput);
                 }
             }
         });
@@ -190,6 +193,39 @@ const view = {
                 todoList.toggleCompleted(position);
                 check.checked = true;
             }
+        });
+
+        todosUl.addEventListener('dragover', (event) => {
+            let elementClicked = event.target;
+
+            let isBefore = function (el1, el2) {
+        
+                if ( el2.parentNode === el1.parentNode ) {
+                  for ( let cur = el1.previousSibling; cur; cur = cur.previousSibling ) {
+                    if (cur === el2) {
+                        return true;
+                    }
+                  }
+                } else {
+                    return false;
+                }
+            }
+
+            if (isBefore(_el, elementClicked)) {
+                elementClicked.parentNode.insertBefore(_el, elementClicked);
+            } else {
+                elementClicked.parentNode.insertBefore(_el, elementClicked.nextSibling);
+            }
+        });
+
+        todosUl.addEventListener('dragstart', (event) => {
+            let elementClicked = event.target;
+            console.log(_el);
+            console.log(elementClicked)
+
+                event.dataTransfer.effectAllowed = 'move';
+                event.dataTransfer.setData('text/plain', null);
+                _el = elementClicked;
         });
     }
 };

@@ -147,3 +147,33 @@ input:checked+input[type="text"] {
   display: none !important;
   background-color: red !important;
 }
+
+.draggable {
+    list-style-type: none;
+    margin: 10px;
+    background-color: white;
+    cursor: move;
+    transition: all 200ms;
+    user-select: none;
+    margin: 10px auto;
+    position: relative;
+  }
+
+  .draggable:after {
+    content: 'drag me';
+    right: 7px;
+    font-size: 10px;
+    position: absolute;
+    cursor: pointer;
+    line-height: 5;
+    transition: all 200ms;
+    transition-timing-function: cubic-bezier(0.48, 0.72, 0.62, 1.50);
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  .draggable:hover :after {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
