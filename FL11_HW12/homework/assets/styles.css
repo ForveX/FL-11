@@ -1,0 +1,9 @@
+/* Your styles go here */
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
